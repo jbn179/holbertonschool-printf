@@ -9,10 +9,10 @@
 
 int print_string(char *s)
 {
+	size_t count = 0;
+
 	if (s == NULL)
 		return (0);
-
-	size_t count = 0;
 
 	while (s[count] != '\0')
 	{
