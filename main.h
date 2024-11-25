@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <stddef.h>
 #include <unistd.h>
 
 int print_char(char c);

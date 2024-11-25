@@ -9,6 +9,18 @@
 
 int main(void)
 {
-	print_char('A');
+	print_char('S');
+	print_char('a');
+	print_char('l');
+	print_char('u');
+	print_char('t');
+	print_char('N');
+	print_char('o');
+	print_char('u');
+	print_char('n');
+	print_char('o');
+	print_char('u');
+	print_char('!');
+
 	return (0);
 }

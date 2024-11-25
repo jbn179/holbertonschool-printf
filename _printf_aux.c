@@ -9,6 +9,9 @@
 
 int print_char(char c)
 {
+	if (c == '\0')
+		return (-1);
+
 	return (write(1, &c, 1));
 }
 
@@ -21,9 +24,14 @@ int print_char(char c)
 
 int print_string(char *s)
 {
+	int count = 0;
 
-
-
+	while (s[count] != '\0')
+	{
+		write(1, &s[count], 1);
+		count++;
+	}
+	return (count);
 }
 
 /**
