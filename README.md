@@ -178,7 +178,7 @@ COLOPHON
 
 <div align="center">
 
-![Flowchart](printf_flowchart.drawio.png)
+![Flowchart](printf_flowchart.png)
 </div>
 
 Made with [``draw.io``](http://draw.io/)
