@@ -18,10 +18,10 @@ format_specifier specifiers[] = {
 {'s', print_string},
 {'d', print_integer},
 {'i', print_integer},
-    {'%', print_char}
-    };
+{'%', print_char}
+ };
 
-    va_start(args, format);
+va_start(args, format);
 
     while (format[i])
     {
@@ -38,14 +38,14 @@ format_specifier specifiers[] = {
                 }
             }
         }
-        else
-        {
-            count += print_char(format[i]);
-        }
-        i++;
-    }
+else
+{
+count += print_char(format[i]);
+}
+i++;
+}
 
-    va_end(args);
+va_end(args);
 
-    return count;
+return (count;
 }
