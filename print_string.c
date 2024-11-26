@@ -12,7 +12,7 @@ int print_string(char *s)
 	size_t count = 0;
 
 	if (s == NULL)
-		return (0);
+		return (-1);
 
 	while (s[count] != '\0')
 	{

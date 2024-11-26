@@ -24,7 +24,10 @@ int print_char(char c)
 
 int print_string(char *s)
 {
-	int count = 0;
+	size_t count = 0;
+
+	if (s == NULL)
+		return (0);
 
 	while (s[count] != '\0')
 	{
@@ -43,22 +46,30 @@ int print_string(char *s)
 
 int print_integer(int n)
 {
+	char buffer[12];
+	int i = 0, count = 0;
+	unsigned int num;
+
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		count++;
+		num = -n;
+	}
+
+	else
+		num = n;
+
+	do {
+		buffer[i++] = (num % 10) + '0';
+		num /= 10;
+	} while (num > 0);
 
 
-
-}
-
-/**
- * handle_format - handles format specifiers and prints corresponding values
- * @specifier: the format specifier character
- * @args: the list of arguments passed to _printf
- * Description: handles format specifiers and prints corresponding values
- * Return: the number of characters printed for this specifier
- */
-
-int handle_format(char specifier, va_list args)
-{
-
-
-
+	while (i > 0)
+	{
+		write(1, &buffer[--i], 1);
+		count++;
+	}
+	return (count);
 }
