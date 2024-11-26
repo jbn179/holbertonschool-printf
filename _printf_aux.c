@@ -3,7 +3,7 @@
 
 /**
  * print_char - function that prints a character
- * @c: the character to print
+ * @args: variable argument list containing the character to print
  * Description: function that prints a character
  * Return: the number of characters printed, 1 if success, -1 if error
  */
@@ -20,7 +20,7 @@ int print_char(va_list args)
 
 /**
  * print_string - function that prints a string
- * @s: the string to print
+ * @args: variable argument list containing the character to print
  * Description: function that prints a string
  * Return: the number of characters printed
  */
@@ -44,7 +44,7 @@ int print_string(va_list args)
 
 /**
  * print_integer - function that prints an integer
- * @n: the integer to print
+ * @args: variable argument list containing the character to print
  * Description: function that prints an integer
  * Return: the number of characters printed
  */
