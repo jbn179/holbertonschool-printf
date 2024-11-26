@@ -20,19 +20,16 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
-		{'%', print_char}
-	};
+		{'%', print_char} };
 
 	int j;
-
 	int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
 
 	va_start(args, format);
-	
+
 	while (format[i])
 	{
 		if (format[i] == '%')
-		{
 			i++;
 			specifier = format[i];
 
@@ -41,23 +38,15 @@ int _printf(const char *format, ...)
 				if (specifier == specifiers[j].specifier)
 				{
 					count += specifiers[j].func(args);
-					break;
-				}
-			}
+					break; } }
 			if (j == num_specifiers)
 			{
 				write(1, "%", 1);
 				write(1, &specifier, 1);
-				count += 2;
-			}
-		}
+				count += 2; }
 		else
-		{
 			write(1, &format[i], 1);
 			count++;
-		}
-		i++;
-	}
+		i++; }
 	va_end(args);
-	return (count);
-}
+	return (count); }
