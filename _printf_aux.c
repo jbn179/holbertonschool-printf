@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_char - function that prints a character
@@ -7,8 +8,10 @@
  * Return: the number of characters printed, 1 if success, -1 if error
  */
 
-int print_char(char c)
+int print_char(va_list args)
 {
+	char c = (char)va_arg(args, int);
+
 	if (c == '\0')
 		return (-1);
 
@@ -22,8 +25,10 @@ int print_char(char c)
  * Return: the number of characters printed
  */
 
-int print_string(char *s)
+int print_string(va_list args)
 {
+	char *s = va_arg(args, char *);
+
 	size_t count = 0;
 
 	if (s == NULL)
@@ -44,8 +49,10 @@ int print_string(char *s)
  * Return: the number of characters printed
  */
 
-int print_integer(int n)
+int print_integer(va_list args)
 {
+	int n = va_arg(args, int);
+
 	char buffer[12];
 	int i = 0, count = 0;
 	unsigned int num;

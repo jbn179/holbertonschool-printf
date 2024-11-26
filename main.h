@@ -8,10 +8,8 @@
 
 /**
  * struct format_specifier - Structure associate
- *                          sa format specifier with function
  * @specifier: The format specifier character (e.g., 'c', 's', 'd')
  * @func: Function pointer that handles this specific format specifier
- *
  * Description: This structure is used to link each format specifier to a
  * specific function that processes the corresponding argument(s) and returns
  * the number of characters printed.

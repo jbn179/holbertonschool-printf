@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * _printf - Produces output according to a format
@@ -9,10 +10,10 @@
 
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count;
-	int i;
+	int count = 0;
+	int i = 0;
 	char specifier;
+	va_list args;
 
 	format_specifier specifiers[] = {
 		{'c', print_char},
@@ -22,15 +23,20 @@ int _printf(const char *format, ...)
 		{'%', print_char}
 	};
 
-	va_start(args, format);
+	int j;
 
+	int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
+
+	va_start(args, format);
+	
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			specifier = format[i];
-			for (int j = 0; j < 5; j++)
+
+			for (j = 0; j < num_specifiers; j++)
 			{
 				if (specifier == specifiers[j].specifier)
 				{
@@ -38,10 +44,17 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
+			if (j == num_specifiers)
+			{
+				write(1, "%", 1);
+				write(1, &specifier, 1);
+				count += 2;
+			}
 		}
 		else
 		{
-			count += print_char(format[i]);
+			write(1, &format[i], 1);
+			count++;
 		}
 		i++;
 	}
