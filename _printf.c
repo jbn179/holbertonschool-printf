@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		{'i', print_integer},
 		{'%', print_char}
 	};
-	
+
 	int j;
 	int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
 
