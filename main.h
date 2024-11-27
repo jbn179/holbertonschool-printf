@@ -1,9 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
 #include <stdarg.h>
-#include <stddef.h>
 #include <unistd.h>
 
 /**
@@ -21,7 +19,7 @@ typedef struct format_specifier
 	int (*func)(va_list);
 } format_specifier;
 
-int _putchar(va_list args);
+char _putchar(char c);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_integer(va_list args);
