@@ -91,3 +91,17 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
+/**
+ * print_percent - Function that prints a percent sign '%'
+ * @args: Unused parameter
+ *
+ * Return: The number of characters printed (always 1)
+ */
+
+int print_percent(va_list args)
+{
+    (void)args;
+
+    write(1, "%", 1);
+    return (1);
+}
