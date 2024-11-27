@@ -36,6 +36,7 @@ int print_string(va_list args)
  * Description: function that prints an integer
  * Return: the number of characters printed
  */
+
 int print_integer(va_list args)
 {
 	int n = va_arg(args, int);
