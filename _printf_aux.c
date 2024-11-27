@@ -67,7 +67,7 @@ int print_integer(va_list args)
 /**
  * print_percent - Function that prints a percent sign '%'
  * @args: va_list containing the character to print
- *
+ * Description: function that prints a percent
  * Return: The number of characters printed (always 1)
  */
 
