@@ -18,7 +18,7 @@
 typedef struct format_specifier
 {
 	char specifier;
-	int (*func)(va_list args);
+	int (*func)(va_list);
 } format_specifier;
 
 int print_char(va_list args);

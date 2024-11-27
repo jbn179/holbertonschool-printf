@@ -3,17 +3,14 @@
 
 /**
  * print_char - function that prints a character
- * @c: the character to print
- * Description: function that prints a character
- * Return: the number of characters printed, 1 if success, -1 if error
+ * @args: va_list containing the character to print
+ * Description: Extracts a character from va_list and prints it
+ * Return: 1 if successful (character printed), -1 if write fails
  */
 
 int print_char(va_list args)
 {
 	char c = (char)va_arg(args, int);
-
-	if (c == '\0')
-		return (-1);
 
 	return (write(1, &c, 1));
 }
