@@ -9,27 +9,38 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0;
+	int count;
+	int i;
+	char specifier;
 
-va_start(args, format);
+	format_specifier specifiers[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_integer},
+		{'i', print_integer},
+		{'%', print_char}
+	};
 
-	while (*format)
+	va_start(args, format);
+
+	while (format[i])
 	{
 		if (*format == '%')
 		{
-			format++;
-			if (*format == 'c')
-				count += print_char(va_arg(args, int));
-			else if (*format == 's')
-				count += print_string(va_arg(args, char *));
-			else if (*format == 'd' || *format == 'i')
-				count += print_integer(va_arg(args, int));
-			else if (*format == '%')
-				count += print_char('%');
+			i++;
+			specifier = format[i];
+			for (int j = 0; j < 5; j++)
+			{
+				if (specifier == specifiers[j].specifier)
+				{
+					count += specifiers[j].func(args);
+					break;
+				}
+			}
 		}
 		else
 		{
-			count += print_char(*format);
+			count += print_char(format[i]);
 		}
 		format++;
 	}
