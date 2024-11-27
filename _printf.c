@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	char specifier;
 	va_list args;
 
-	format_specifier specifiers[] = {
+	format_specifier handler[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_integer},
@@ -25,10 +25,10 @@ int _printf(const char *format, ...)
 
 	int j;
 
-	int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
+	int num_handler = sizeof(handler) / sizeof(handler[0]);
 
 	va_start(args, format);
-	
+
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -36,24 +36,24 @@ int _printf(const char *format, ...)
 			i++;
 			specifier = format[i];
 
-			for (j = 0; j < num_specifiers; j++)
+			for (j = 0; j < num_handler; j++)
 			{
-				if (specifier == specifiers[j].specifier)
+				if (specifier == handler[j].specifier)
 				{
-					count += specifiers[j].func(args);
+					count += handler[j].func(args);
 					break;
 				}
 			}
-			if (j == num_specifiers)
+			if (j == num_handler)
 			{
-				write(1, "%", 1);
-				write(1, &specifier, 1);
+				_putchar('%');
+				_putchar(specifier);
 				count += 2;
 			}
 		}
 		else
 		{
-			write(1, &format[i], 1);
+			_putchar (format[i]);
 			count++;
 		}
 		i++;

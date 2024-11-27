@@ -21,9 +21,11 @@ typedef struct format_specifier
 	int (*func)(va_list);
 } format_specifier;
 
+int _putchar(va_list args);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_integer(va_list args);
+int print_percent(va_list args);
 int _printf(const char *format, ...);
 
 #endif
