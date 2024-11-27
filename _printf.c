@@ -8,41 +8,53 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count;
-	int i;
+	int count = 0;
+	int i = 0;
 	char specifier;
+	va_list args;
 
 	format_specifier specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_integer},
 		{'i', print_integer},
-		{'%', print_percent}
+		{'%', print_char}
 	};
 
-	va_start(args, format);
+	int j;
 
+	int num_specifiers = sizeof(specifiers) / sizeof(specifiers[0]);
+
+	va_start(args, format);
+	
 	while (format[i])
 	{
 		if (*format == '%')
 		{
 			i++;
 			specifier = format[i];
-			for (int j = 0; j < 5; j++)
+
+			for (j = 0; j < num_specifiers; j++)
 			{
-				if (specifier == specifiers[j].specifier)
+				if (format[i] == handler[j].specifier)
 				{
-					count += specifiers[j].func(args);
+					count += handler[j].func(args);
 					break;
 				}
+			}
+			if (j == num_specifiers)
+			{
+				write(1, "%", 1);
+				write(1, &specifier, 1);
+				count += 2;
 			}
 		}
 		else
 		{
-			count += print_char(format[i]);
+			write(1, &format[i], 1);
+			count++;
 		}
-		format++;
+		i++;
 	}
 	va_end(args);
 	return (count);
