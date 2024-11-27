@@ -76,6 +76,10 @@ int main(void)
 	return (0);
 }
 ```
+```c
+Hello, world
+user@holbertonstudents:~$
+```
 
 - Outputting an integer using the %d format specifier
 ```c
@@ -87,7 +91,10 @@ int main(void)
 	return (0);
 }
 ```
-
+``` c
+Number: 74
+user@holbertonstudents:~$
+```
 - Displaying a single character with the %c format specifier
 ```c
 #include "main.h"
@@ -98,11 +105,14 @@ int main(void)
 	return (0);
 }
 ```
-
+```c
+Character: A
+user@holbertonstudents:~$
+```
 # Man Page
 
 ```
-_PRINTF(3)                  Custom Library Manual                   _PRINTF(3)
+_PRINTF                 Custom Library Manual                 
 
 NAME
        _printf - custom implementation of the printf function,
@@ -124,20 +134,11 @@ DESCRIPTION
        %d or %i
               Signed decimal integer.
 
-       %u
-              Unsigned decimal integer.
-
-       %f
-              Decimal floating point.
-
        %s
               String of characters.
 
        %c
               Character.
-
-       %p
-              Pointer address.
 
        %%
               A literal percent sign.
@@ -152,7 +153,7 @@ RETURN VALUE
 
 ERRORS
        If an invalid conversion specifier is encountered or if an insufficient number of
-       arguments are provided for the format string, the behavior is undefined.
+       arguments are provided for the format string, an error occurs.
 
 EXAMPLES
        #include "main.h"
@@ -162,9 +163,6 @@ EXAMPLES
            _printf("Number: %d\n", 74);        // Output: Number: 74
            return 0;
        }
-
-SEE ALSO
-       printf(3), fprintf(3), sprintf(3)
 
 COLOPHON
        This manual page documents the _printf function as part of a custom library.
