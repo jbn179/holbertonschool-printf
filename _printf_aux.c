@@ -1,16 +1,16 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * print_char - function that prints a character
- * @c: the character to print
- * Description: function that prints a character
- * Return: the number of characters printed, 1 if success, -1 if error
+ * @args: va_list containing the character to print
+ * Description: Extracts a character from va_list and prints it
+ * Return: 1 if successful (character printed), -1 if write fails
  */
 
-int print_char(char c)
+int print_char(va_list args)
 {
-	if (c == '\0')
-		return (-1);
+	char c = (char)va_arg(args, int);
 
 	return (write(1, &c, 1));
 }
@@ -22,8 +22,10 @@ int print_char(char c)
  * Return: the number of characters printed
  */
 
-int print_string(char *s)
+int print_string(va_list args)
 {
+	char *s = va_arg(args, char *);
+
 	size_t count = 0;
 
 	if (s == NULL)
@@ -44,8 +46,10 @@ int print_string(char *s)
  * Return: the number of characters printed
  */
 
-int print_integer(int n)
+int print_integer(va_list args)
 {
+	int n = va_arg(args, int);
+
 	char buffer[12];
 	int i = 0, count = 0;
 	unsigned int num;
