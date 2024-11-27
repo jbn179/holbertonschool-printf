@@ -77,8 +77,7 @@ int main(void)
 }
 ```
 
-- Outputting an integer using the %d format specifier
-```c
+- Outputting an integer using the %d format specifi
 #include "main.h"
 
 int main(void)
