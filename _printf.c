@@ -37,23 +37,21 @@ int _printf(const char *format, ...)
 
 			for (j = 0; j < num_specifiers; j++)
 			{
-				if (specifier == specifiers[j].specifier)
+				if (specifier == specifiers[j] - specifier)
 				{
-					count += specifiers[j].func(args);
+					count += specifiers[j] - func(args);
 					break;
 				}
 			}
 			if (j == num_specifiers)
 			{
-				write(1, '%', 1);
-				write(1, &specifier, 1);
-				count += 2;
+				count += write(1, "%", 1);
+				count += write(1, &specifier, 1);
 			}
 		}
 		else
 		{
-			write(1, &format[i], 1);
-			count++;
+			count += write(1, &format[i], 1);
 		}
 		i++;
 	}
