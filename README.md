@@ -50,6 +50,19 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 # Usage Examples
 The following examples demonstrate how to use the custom ``_printf`` function in your code.
 These examples showcase basic string formatting, integer printing, and character output.
+- Printing a single character with the %c format specifier
+```c
+#include "main.h"
+int main(void)
+{
+       _printf("Character: %c\n", 'A');
+       return (0);
+}
+```
+```c
+Character: A
+user@holbertonstudents:~$
+```
 - Printing a formatted string with a %s placeholder
 ```c
 #include "main.h"
@@ -63,7 +76,8 @@ int main(void)
 Hello, world
 user@holbertonstudents:~$
 ```
-
+- Printing an integer using the %d format specifier
+```c
 #include "main.h"
 int main(void)
 {
@@ -73,19 +87,6 @@ int main(void)
 ```
 ``` c
 Number: 74
-user@holbertonstudents:~$
-```
-- Displaying a single character with the %c format specifier
-```c
-#include "main.h"
-int main(void)
-{
-       _printf("Character: %c\n", 'A');
-       return (0);
-}
-```
-```c
-Character: A
 user@holbertonstudents:~$
 ```
 # Man Page
