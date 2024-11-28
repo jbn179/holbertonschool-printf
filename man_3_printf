@@ -39,7 +39,7 @@ ERRORS
 EXAMPLES
        #include "main.h"
        int main() {
-           _printf("Hello, %s!\n", "world");  // Output: Hello, world!
+           _printf("Hello, %s!\n", "world");  // Output: Hello, world
            _printf("Number: %d\n", 74);        // Output: Number: 74
            return 0;
        }
