@@ -4,7 +4,13 @@
 /**
  * _printf - Produces output according to a format
  * @format: A character string containing zero or more directives
- *
+ * Description : This function processes a format string and prints the
+ * corresponding characters or values based on the specifiers it
+ * encounters.
+ * The function use va_list to handle variable arguments passed
+ * after the format string, and an array of format_specifier
+ * structures to map each specifier ('c', 's', 'd', 'i', '%')
+ * to its associated printing function.
  * Return: The number of characters printed
  */
 
