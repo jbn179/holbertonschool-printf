@@ -58,6 +58,14 @@ int main(void)
 Hello, world
 user@holbertonstudents:~$
 ```
+```c
+Hello, world
+user@holbertonstudents:~$
+```
+```c
+Hello, world
+user@holbertonstudents:~$
+```
 - Outputting an integer using the %d format specifier
 ```c
 #include "main.h"
@@ -86,7 +94,8 @@ user@holbertonstudents:~$
 ```
 # Man Page
 ```
-_PRINTF                 Custom Library Manual
+_PRINTF                 Custom Library Manual                 
+
 NAME
        _printf - custom implementation of the printf function,
                             formats and displays data to standard output.
@@ -101,10 +110,12 @@ DESCRIPTION
        The following conversion specifiers are supported:
        %d or %i
               Signed decimal integer.
+
        %s
               String of characters.
        %c
               Character.
+
        %%
               A literal percent sign.
        The arguments are converted according to the format specified. If there are not
@@ -116,6 +127,7 @@ RETURN VALUE
 ERRORS
        If an invalid conversion specifier is encountered or if an insufficient number of
        arguments are provided for the format string, an error occurs.
+
 EXAMPLES
        #include "main.h"
        int main() {
@@ -123,6 +135,7 @@ EXAMPLES
            _printf("Number: %d\n", 74);        // Output: Number: 74
            return 0;
        }
+
 COLOPHON
        This manual page documents the _printf function as part of a custom library.
 ```
@@ -135,3 +148,4 @@ Made with [``draw.io``](http://draw.io/)
 # Authors
 Noor Medjahed [``@ni-mdj``](https://www.github.com/ni-mdj)
 Benjamin Ristord  [``@jbn179``](https://www.github.com/jbn179)
+ 
