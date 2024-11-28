@@ -13,6 +13,7 @@ This project enhances understanding of format specifiers, variable arguments, an
 - [Requirements](#requirements)
 - [Usage Examples](#usage-examples)
 - [Man Page](#man-page)
+		- [Command to execute Man Page  :  man ./man\_3\_printf](#command-to-execute-man-page----man-man_3_printf)
 - [Testing](#testing)
 		- [Memory Check with Valgrind :](#memory-check-with-valgrind-)
 - [Flowchart](#flowchart)
@@ -90,6 +91,8 @@ Number: 74
 user@holbertonstudents:~$
 ```
 # Man Page
+
+### Command to execute Man Page  :  man ./man_3_printf
 ```
 _PRINTF                 Custom Library Manual                 
 
@@ -135,13 +138,17 @@ ERRORS
 EXAMPLES
        #include "main.h"
        int main() {
-           _printf("Hello, %s!\n", "world");  // Output: Hello, world!
+           _printf("Hello, %s!\n", "world");  // Output: Hello, world
            _printf("Number: %d\n", 74);        // Output: Number: 74
            return 0;
        }
 
 COLOPHON
        This manual page documents the _printf function as part of a custom library.
+
+AUTHORS
+	Noor Medjahed
+	Benjamin Ristord
 ```
 # Testing
 
