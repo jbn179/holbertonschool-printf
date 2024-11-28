@@ -147,22 +147,44 @@ COLOPHON
 ### Memory Check with Valgrind :
 
 ```
-==1062280== Memcheck, a memory error detector
-==1062280== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
-==1062280== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
-==1062280== Command: printf
-==1062280== 
-printf: missing operand
-Try 'printf --help' for more information.
-==1062280== 
-==1062280== HEAP SUMMARY:
-==1062280==     in use at exit: 0 bytes in 0 blocks
-==1062280==   total heap usage: 227 allocs, 227 frees, 21,087 bytes allocated
-==1062280== 
-==1062280== All heap blocks were freed -- no leaks are possible
-==1062280== 
-==1062280== For lists of detected and suppressed errors, rerun with: -s
-==1062280== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==1064504== Memcheck, a memory error detector
+==1064504== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==1064504== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==1064504== Command: ./printf
+==1064504== 
+Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.
+Length:[39, 39]
+Length:[39, 39]
+Negative:[-762534]
+Negative:[-762534]
+Unsigned:[%u]
+Unsigned:[2147484671]
+Unsigned octal:[%o]
+Unsigned octal:[20000001777]
+Unsigned hexadecimal:[%x, %X]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Character:[H]
+Character:[H]
+String:[I am a string !]
+String:[I am a string !]
+Address:[%p]
+Address:[0x7ffe637541f0]
+Percent:[%]
+Percent:[%]
+Len:[12]
+Len:[12]
+Unknown:[%r]
+Unknown:[%r]
+==1064504== 
+==1064504== HEAP SUMMARY:
+==1064504==     in use at exit: 0 bytes in 0 blocks
+==1064504==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==1064504== 
+==1064504== All heap blocks were freed -- no leaks are possible
+==1064504== 
+==1064504== For lists of detected and suppressed errors, rerun with: -s
+==1064504== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 # Flowchart
 <div align="center">
