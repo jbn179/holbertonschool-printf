@@ -22,7 +22,7 @@ int print_string(va_list args)
 	int count = 0;
 
 	if (s == 0)
-		return (-1);
+		s = "(null)";
 	while (s[count] != '\0')
 	{
 		write(1, &s[count], 1);
