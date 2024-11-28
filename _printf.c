@@ -16,18 +16,12 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	int i = 0;
+	int count = 0, i = 0, j;
 	va_list args;
 	format_specifier handler[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_integer},
-		{'i', print_integer},
-		{'%', print_percent},
-		{0, NULL},
+		{'c', print_char}, {'s', print_string}, {'d', print_integer},
+		{'i', print_integer}, {'%', print_percent}, {0, NULL},
 	};
-	int j;
 
 	va_start(args, format);
 	while (format[i])
