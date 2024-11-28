@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == NULL)
+			{
+				va_end(args);
+				return (-1);
+			}
+
 			for (j = 0; handler[j].specifier != 0; j++)
 			{
 				if (format[i] == handler[j].specifier)
